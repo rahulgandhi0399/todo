@@ -1,1 +1,1 @@
-# todo
+running  cra and shortid 
