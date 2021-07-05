@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useContext } from 'react';
+import TodoProvider from './context/tasks'
+
 import './App.css';
+import  todos  from "./context/tasks";
+import TaskForm from './TaskForm';
+
+
+
+
 
 function App() {
+ 
+  // const selectedTaskValue  = useContext(selectedTaskContext);
+  // const tasksValue =   useContext(tasksContext);
+  // tasksValue.push("dummy task")
+  // console.log(selectedTaskValue,tasksValue);
+  
   return (
+    <TodoProvider>
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+       
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+          
+          
+          
+          <TaskForm/>
+          
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
       </header>
     </div>
+    </TodoProvider>
   );
 }
 
