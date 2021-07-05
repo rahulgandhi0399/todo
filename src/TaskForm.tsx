@@ -2,9 +2,9 @@ import { ContextType, useContext } from "react";
 import { TodoContext } from './context/tasks'
 
 const TaskForm = () => {
-  const todos = useContext(TodoContext)   ; 
-
-  console.log(todos)
+  const [todos] = useContext(TodoContext)   ; 
+  
+  console.log(todos.setTasks)
  
   return (
     <div>
@@ -25,7 +25,7 @@ const TaskForm = () => {
             console.log(taskvalue)
             if (taskvalue ) {
 
-              // let newresult = [...tasks ,taskvalue]
+             //  let newresult = [...tasks ,taskvalue]
               // setTasks(newresult)
             }
             
