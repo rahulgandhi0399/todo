@@ -8,7 +8,7 @@ export const todo = {
 }
 
 export type ThemeContextType = {
-  todos : {taskName:string , taskDesc:string};
+  todos : {taskName:string , taskDesc:string}[];
   setTasks : (tasksContext: any  ) => void;
   
 
@@ -32,7 +32,7 @@ const setTasks = (tasksContext: any = []) => {
 
 
 
-export const ThemeContext = createContext<ThemeContextType>({todos:todo,setTasks});
+export const ThemeContext = createContext<ThemeContextType>({todos:[todo],setTasks});
 export const useTheme = () => useContext(ThemeContext);
 
 
