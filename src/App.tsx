@@ -13,10 +13,6 @@ function App() {
   const [todos, setTodos] = React.useState(todo);
   
 
-  // const selectedTaskValue  = useContext(selectedTaskContext);
-  // const tasksValue =   useContext(tasksContext);
-  // tasksValue.push("dummy task")
-  // console.log(selectedTaskValue,tasksValue);
   
   return (
     <ThemeContext.Provider  value={{todos,setTasks:setTodos}} >

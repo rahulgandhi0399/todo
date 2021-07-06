@@ -4,16 +4,13 @@ import { createContext, useContext } from 'react';
 export const todo = {
    taskName:"aaaaa",
    taskDesc: "bb",
-  //  status = true,
+  
 }
 
 export type ThemeContextType = {
   todos : {taskName:string , taskDesc:string};
   setTasks : (tasksContext: any  ) => void;
-  // getTasks : () => void;
-  // setSelectedTask : (tasksContext: any  ) => void;
-  // getSelectedTask : (tasksContext: any  ) => void; 
- 
+  
 
 }
 const setTasks = (tasksContext: any = []) => {
