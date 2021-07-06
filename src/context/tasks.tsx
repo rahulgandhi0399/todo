@@ -1,13 +1,18 @@
 import * as React from "react";
 import { createContext, useContext } from 'react';
 
+export const todo = {
+   taskName:"aaaaa",
+   taskDesc: "bb",
+  //  status = true,
+}
 
 export type ThemeContextType = {
-  
+  todos : {taskName:string , taskDesc:string};
   setTasks : (tasksContext: any  ) => void;
-  getTasks : (tasksContext: any  ) => void;
-  setSelectedTask : (tasksContext: any  ) => void;
-  getSelectedTask : (tasksContext: any  ) => void; 
+  // getTasks : () => void;
+  // setSelectedTask : (tasksContext: any  ) => void;
+  // getSelectedTask : (tasksContext: any  ) => void; 
  
 
 }
@@ -23,38 +28,14 @@ const setTasks = (tasksContext: any = []) => {
  localStorage.setItem("tasks", tasksValue);
 }
 
-const getTasks = () => {
-  let tasks = localStorage.getItem("tasks");
-  if (!tasks) {
-    return [];
-  }
-  return JSON.parse(tasks);
-};
 
-export const setSelectedTask = (selectedTasksContext: any = null) => {
-  if (!selectedTasksContext) {
-    localStorage.deleteItem("selectedTask");
-  } else {
-    const selectedTaskValue = JSON.stringify(selectedTasksContext);
-
-    localStorage.setItem("selectedTask", selectedTaskValue);
-  }
-};
-
-export const getSelectedTask = () => {
-  let selectedTask = localStorage.getItem("selectedTask");
-  if (!selectedTask) {
-    return null;
-  }
-  return JSON.parse(selectedTask);
-};
 
 
   
 
 
 
-export const ThemeContext = createContext<ThemeContextType>({setTasks,getTasks,getSelectedTask,setSelectedTask });
+export const ThemeContext = createContext<ThemeContextType>({todos:todo,setTasks});
 export const useTheme = () => useContext(ThemeContext);
 
 

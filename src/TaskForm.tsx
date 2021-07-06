@@ -1,21 +1,17 @@
-import { ContextType, useContext } from "react";
-import { TodoContext } from './context/tasks'
+import { useTheme} from "./context/tasks";
+
 
 const TaskForm = () => {
-  const [todos] = useContext(TodoContext)   ; 
-  
-  console.log(todos.setTasks)
- 
+  const { todos } = useTheme();
+  console.log(todos);
   return (
     <div>
-      {/* <div> selected task : {selectedTask} </div> */}
+     
       <div>
         taskslist:
-        {/* <ul>
-          {todos.map((toe: any) => (
-            <li> {toe} </li>
-          ))}
-        </ul> */}
+        <p> {todos.taskName } </p>
+        <p> {todos.taskDesc} </p>
+       
       </div>
       <div>
         <input id = "taskinfo" />
@@ -25,8 +21,7 @@ const TaskForm = () => {
             console.log(taskvalue)
             if (taskvalue ) {
 
-             //  let newresult = [...tasks ,taskvalue]
-              // setTasks(newresult)
+             
             }
             
         }}>save </button>
