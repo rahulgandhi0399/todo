@@ -10,10 +10,8 @@ import TaskForm from './TaskForm';
 
 
 function App() {
-  const [todos, setTodos] = React.useState(todo);
-  
+  const [todos, setTodos] = React.useState([todo]);
 
-  
   return (
     <ThemeContext.Provider  value={{todos,setTasks:setTodos}} >
     <div className="App">
