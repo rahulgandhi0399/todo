@@ -4,13 +4,16 @@ import { createContext, useContext } from 'react';
 export const todo = {
    taskName:"aaaaa",
    taskDesc: "bb",
+   id : 0.24545345,
   
 }
 
+
+
 export type ThemeContextType = {
-  todos : {taskName:string , taskDesc:string}[];
+  todos : {taskName:string , taskDesc:string,id:number}[];
   setTasks : (taskName:string,taskDesc:string) => void;
-  
+  handleTodoRemove : (id:number) => void;
 
 }
 const setTasks = (tasksContext: any = []) => {
@@ -26,13 +29,16 @@ const setTasks = (tasksContext: any = []) => {
 }
 
 
-
+function handleTodoRemove(id: number) {
+ 
+  
+  }
 
   
 
 
 
-export const ThemeContext = createContext<ThemeContextType>({todos:[todo],setTasks});
+export const ThemeContext = createContext<ThemeContextType>({todos:[todo],setTasks,handleTodoRemove});
 export const useTheme = () => useContext(ThemeContext);
 
 

@@ -14,16 +14,25 @@ function App() {
 
   const setTasks = (taskName:string,taskDesc:string) => {
     
-    setTodos( (prevState: any) => ([...prevState , {taskName:taskName,taskDesc:taskDesc}]) )
+    setTodos( (prevState: any) => ([...prevState , {taskName:taskName,taskDesc:taskDesc,id:Math.random()}]) )
 
     const tasksValue = JSON.stringify(todos);
     localStorage.setItem("tasks", tasksValue);
    
   }
   
+  function handleTodoRemove(id: number) {
+ 
+    const newTodosState = todos.filter((todo) => todo.id !== id)
+    
+    setTodos(newTodosState)
+
+    const tasksValue = JSON.stringify(todos);
+    localStorage.setItem("tasks", tasksValue);
+    }
 
   return (
-    <ThemeContext.Provider  value={{todos,setTasks:setTasks}} >
+    <ThemeContext.Provider  value={{todos,setTasks:setTasks,handleTodoRemove:handleTodoRemove}} >
     <div className="App">
       <header className="App-header">
        

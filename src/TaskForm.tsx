@@ -3,7 +3,7 @@ import { useTheme} from "./context/tasks";
 
 
 const TaskForm = () => {
-  const { todos, setTasks } = useTheme();
+  const { todos, setTasks , handleTodoRemove } = useTheme();
   const [taskname, setTaskName] = React.useState("");
   const [taskdesc, settaskDesc] = React.useState("");
  
@@ -15,7 +15,10 @@ const TaskForm = () => {
         taskslist:
         {
           todos.map((to) => {
-            return <div> <p> Name  : {to.taskName} </p> <p> description : {to.taskDesc} </p> </div>
+            return <div> 
+              <p> Name  : {to.taskName} </p> <p> description : {to.taskDesc} </p> 
+             <button onClick={()=> handleTodoRemove(to.id) }> remove  </button>
+            </div>
           })
         }        
        
