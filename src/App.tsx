@@ -12,8 +12,22 @@ import TaskForm from './TaskForm';
 function App() {
   const [todos, setTodos] = React.useState([todo]);
 
+ usecontext
+  const setTasks = (taskName:string,taskDesc:string) => {
+    
+    setTodos( (prevState: any) => ([...prevState , {taskName:taskName,taskDesc:taskDesc}]) )
+
+    const tasksValue = JSON.stringify(todos);
+    localStorage.setItem("tasks", tasksValue);
+   
+  }
+  
+
   return (
-    <ThemeContext.Provider  value={{todos,setTasks:setTodos}} >
+    <ThemeContext.Provider  value={{todos,setTasks:setTasks}} >
+
+ 
+ main
     <div className="App">
       <header className="App-header">
        

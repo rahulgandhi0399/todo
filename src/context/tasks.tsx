@@ -9,7 +9,8 @@ export const todo = {
 
 export type ThemeContextType = {
   todos : {taskName:string , taskDesc:string}[];
-  setTasks : (tasksContext: any  ) => void;
+ usecontext
+  setTasks : (taskName:string,taskDesc:string) => void;
   
 
 }
