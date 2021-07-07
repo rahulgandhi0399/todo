@@ -23,7 +23,7 @@ const TaskForm = () => {
       <div>
         <input id = "taskinfo"  onBlur = {(e)=> setTaskName( e.target.value ) } />
         <input id = "taskdesc"  onBlur = {(e)=> settaskDesc( e.target.value ) } />
-        <button onClick= {() => setTasks( (prevState: any) => ([...prevState , {taskName:taskname,taskDesc:taskdesc}]) )}> save </button>
+        <button onClick= {() => setTasks( taskname,taskdesc )}> save </button>
         
         
       </div>
